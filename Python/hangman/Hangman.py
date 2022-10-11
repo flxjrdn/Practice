@@ -12,6 +12,9 @@ class Hangman:
     def print_word(self):
         print(self.word)
 
+    def initialize_known_letters(self):
+        self.known_letters = ''.join(['_' for c in self.word])
+
     def print_known_letters(self):
         print(self.known_letters)
 
@@ -23,14 +26,14 @@ class Hangman:
     def get_input_letter(self):
         while True:
             self.guess = input('Choose a letter:')
-            if self.guess.isalpha() & len(self.guess) == 1:
+            if self.guess.isalpha() & (len(self.guess) == 1):
                 break
             else:
-                print('Invalid input. Choose a single letter:')
+                print('Invalid input. Choose a single letter.')
 
     def play(self):
         self.choose_word()
+        self.initialize_known_letters()
         print('Can you find the chosen word?')
-
         self.print_known_letters()
         self.get_input_letter()
