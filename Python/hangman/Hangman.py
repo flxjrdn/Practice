@@ -54,7 +54,6 @@ class Hangman:
         self.init_known_letters_as_underscores()
         print('Can you find the chosen word?')
         print(self.known_letters)
-        print(self.word)
 
         while True:
             self.guess_letter()
